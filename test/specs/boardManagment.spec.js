@@ -4,7 +4,10 @@ describe("Board Management", () => {
 
     beforeEach(async () => {
         await login();
-        await browser.refresh(); 
+    });
+
+    afterEach(async () => {
+        await browser.reloadSession();
     });
 
     it('should create a board successfully', async () => {
@@ -19,19 +22,10 @@ describe("Board Management", () => {
         // Escribir el nombre del nuevo tablero
         await boardTitleInput.setValue(newBoardText);
 
-        // Hacer clic en el botón de crear
+        //Crear tablero
         const submitButton = await $('button.ijFumaLuInvBrL');
         await submitButton.waitForDisplayed({ timeout: 5000, timeoutMsg: 'Submit button not visible' });
         await submitButton.click();
-
-        /* // Esperar a que el título del nuevo tablero se muestre
-        const titleBoard = await $('h1.HKTtBLwDyErB_o');
-        await titleBoard.waitForDisplayed({ timeout: 5000, timeoutMsg: 'Board title not displayed after creation' });
-
-        // Obtener texto del título del nuevo tablero
-        const linkText = await titleBoard.getText();
-        expect(linkText).toBe(newBoardText); */
-
-    });
+    }); 
 
 });

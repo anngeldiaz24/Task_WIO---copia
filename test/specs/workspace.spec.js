@@ -21,7 +21,7 @@ describe("Workspace Management - Modify workspace details", () => {
         await browser.waitUntil(async () => {
             const currentUrl = await browser.getUrl();
             return currentUrl.includes('mantenimientosrwm/account');
-        }, { timeout: 10000, timeoutMsg: 'expected URL didnt open' });
+        }, { timeout: 10000, timeoutMsg: 'The expected URL was not found' });
 
         const editWorkspaceButton = await $('button.Ch1Opdvr77xkJp');
         editWorkspaceButton.click();

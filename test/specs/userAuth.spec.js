@@ -1,7 +1,7 @@
 import { login } from '../helpers/loginHelper.js';
 
-describe('User Authentication', () => {
-    it('should login successfully with existing credentials', async () => {
+describe('List and card Managment', () => {
+    it('should add a list to a board', async () => {
         await login();
     });
 });
