@@ -1,4 +1,6 @@
 import { login } from '../helpers/loginHelper.js';
+const chai = require('chai');
+const expect = chai.expect;
 
 describe("List Management", () => {
 
@@ -33,9 +35,10 @@ describe("List Management", () => {
 
         const text = await $('div.mKJWg6W_CLHoiO h2[data-testid="list-name"]').getText();
 
-        expect(text).toBe(list);
+        expect(text).to.equal(list, 'The list title was not updated correctly');
     }); 
  
+
     it('should add a card to a list', async () => {
         // Access the board management
         const boardButton = await $('a[href="/b/oPUdotrg/list-managment"]');
@@ -61,7 +64,7 @@ describe("List Management", () => {
         }, { timeout: 5000, timeoutMsg: 'The card was not added to the list.' });
     
         const cardTitle = await $('a[data-testid="card-name"]').getText();
-        expect(cardTitle).toBe(cardText);
+        expect(cardTitle).to.equal(cardText, 'The card title was not set correctly');
     }); 
 
 
@@ -84,7 +87,7 @@ describe("List Management", () => {
 
         const filteringElements = await $('div[data-testid="filter-popover-button-filter-count"] span').getText();
 
-        expect(filteringElements).toBe("1");
+        expect(filteringElements).to.equal("1", 'The filter count did not match the expected value');
     });
 
 });
