@@ -41,6 +41,7 @@ export default class WorkspacePage {
 
     async editWorkspaceDetails(newName) {
         await this.editWorkspaceButton.click();
+        await this.displayNameInput.clearValue(); 
         await this.displayNameInput.setValue(newName);
         await this.saveButton.click();
     }
