@@ -45,7 +45,6 @@ export default class WorkspacePage {
         await this.saveButton.click();
     }
 
-    // Método para obtener el título del workspace
     async getWorkspaceTitle() {
         return await this.titleWorkspace.getText();
     }
