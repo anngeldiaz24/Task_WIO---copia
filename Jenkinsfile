@@ -15,12 +15,12 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 script {
-                    sh 'node -v || curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs'
-                    // Instalar dependencias del proyecto
+                    sh 'mkdir -p reports'
                     sh 'npm install'
                 }
             }
         }
+
 
         stage('Run Trello Tests') {
             steps {
@@ -33,8 +33,9 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'reports/**/*.json', fingerprint: true
-            junit 'reports/junit-results.xml'
+            archiveArtifacts artifacts: 'reports/**/*.xml', fingerprint: true  
+            junit '**/reports/**/*.xml'  
         }
     }
+
 }
