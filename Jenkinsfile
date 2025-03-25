@@ -22,15 +22,7 @@ pipeline {
             }
         }
 
-        stage('Run UI Tests') {
-            steps {
-                script {
-                    sh 'npx wdio run wdio.conf.js'
-                }
-            }
-        }
-
-        stage('Run API Tests') {
+        stage('Run Trello Tests') {
             steps {
                 script {
                     sh 'npm run wdio'
