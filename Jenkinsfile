@@ -16,6 +16,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 script {
+                    echo "hola"
                     sh 'node -v || curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs'
                     sh 'npm install'
                 }
