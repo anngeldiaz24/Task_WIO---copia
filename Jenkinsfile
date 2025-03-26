@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-        // Etapa para hacer el checkout del código desde Git
         stage('Checkout') {
             steps {
                 git branch: 'TASK_WITH_POM', url: 'https://github.com/anngeldiaz24/Task_WIO---copia.git'
@@ -17,9 +16,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 script {
-                    // Crear carpeta para reportes si no existe
-                    sh 'mkdir -p reports'
-                    // Instalar dependencias de Node.js
+                    sh 'node -v || curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs'
                     sh 'npm install'
                 }
             }
@@ -30,8 +27,6 @@ pipeline {
             steps {
                 script {
                     sh 'npm run wdio'
-
-                    sh 'ls -R reports'
                 }
             }
         }
