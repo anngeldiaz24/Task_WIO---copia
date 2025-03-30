@@ -16,7 +16,8 @@
     "@wdio/junit-reporter": "^9.11.0",
     "@wdio/local-runner": "^9.9.3",
     "@wdio/mocha-framework": "^9.9.0",
-    "@wdio/spec-reporter": "^9.9.0"
+    "@wdio/spec-reporter": "^9.12.2",
+    "wdio-html-nice-reporter": "^8.1.7"
   },
   "dependencies": {
     "dotenv": "^16.4.7"
