@@ -12,6 +12,7 @@ module.exports = [
         module: "readonly", 
         $: "readonly",        
         browser: "readonly",
+        require: "readonly",
       },
     },
     rules: {
