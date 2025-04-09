@@ -1,5 +1,5 @@
-// eslint.config.js
 const js = require('@eslint/js');
+const prettier = require('eslint-config-prettier');
 
 module.exports = [
   js.configs.recommended,
@@ -28,4 +28,5 @@ module.exports = [
       'prefer-const': 'error',
     },
   },
+  prettier,
 ];

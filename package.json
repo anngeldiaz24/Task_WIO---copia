@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",  
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./src/configs/wdio.conf.js"
   },
@@ -18,6 +20,8 @@
     "@wdio/mocha-framework": "^9.9.0",
     "@wdio/spec-reporter": "^9.12.2",
     "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.6",
     "prettier": "^3.5.3",
     "wdio-html-nice-reporter": "^8.1.7"
   },
